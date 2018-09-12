@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validate tên của lớp học</title>
+</head>
+<body>
+<script>
+    function checkMaLop(malop) {
+        regexp = /^[C,A,P]{1}[0-9]{4}[G,H,I,K,L,M]{1}$/
+        if (regexp.test(malop)){
+            return true
+        }
+        return false
+    }
+    let malop = "G3023C"
+    console.log(checkMaLop(malop))
+    malop = "P43254M"
+    console.log(checkMaLop(malop))
+    malop = "P4325M"
+    console.log(checkMaLop(malop))
+</script>
+</body>
+</html>
