@@ -7,7 +7,7 @@
 <body>
 <script>
     function checkZipCode(maCode) {
-        regexp = /^[0-9]{5}(?:-[0-9]{4})?$/
+        regexp = /^[0-9]{5}(?: - [0-9]{4})?$/
         if (regexp.test(maCode) ) {
             return true
         }
@@ -17,7 +17,7 @@
 
     let zipcode = "12341 d23"
     console.log(checkZipCode(zipcode))
-    zipcode = "12345-4321"
+    zipcode = "12345 - 4321"
     console.log(checkZipCode(zipcode))
 
 </script>

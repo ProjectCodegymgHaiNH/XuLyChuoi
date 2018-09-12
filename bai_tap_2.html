@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validate account</title>
+</head>
+<body>
+<script>
+    function checkAccount(account) {
+        regexp = /^[a-z0-9]+[_a-z0-9]{5,}$/
+        if (regexp.test(account)){
+            return true
+        }
+        return false
+    }
+
+    let acc = "hai12"
+    console.log(checkAccount(acc))
+    acc = "nguyen_hai12"
+    console.log(checkAccount(acc))
+    acc = "_ngu12"
+    console.log(checkAccount(acc))
+</script>
+</body>
+</html>
