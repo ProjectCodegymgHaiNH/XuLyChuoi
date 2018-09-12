@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validate số điện thoại</title>
+</head>
+<body>
+<script>
+    function checkPhoneNum(sdt) {
+        regexp = /^\([8][4]\)*-\([0-9]{10}\)$/
+        if (regexp.test(sdt)){
+            return true
+        }
+        return false
+    }
+    let sdt = "(84)--(0123456789)"
+    console.log(checkPhoneNum(sdt))
+    sdt = "(84)-(0123456789)"
+    console.log(checkPhoneNum(sdt))
+    sdt = "(48)-(0123456789)"
+    console.log(checkPhoneNum(sdt))
+</script>
+</body>
+</html>

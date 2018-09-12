@@ -7,7 +7,7 @@
 <body>
 <script>
     function checkMaLop(malop) {
-        regexp = /^[C,A,P]{1}[0-9]{4}[G,H,I,K,L,M]{1}$/
+        regexp = /^[CAP]{1}[0-9]{4}[G-M]{1}$/
         if (regexp.test(malop)){
             return true
         }
@@ -15,9 +15,9 @@
     }
     let malop = "G3023C"
     console.log(checkMaLop(malop))
-    malop = "P43254M"
+    malop = "P4325A"
     console.log(checkMaLop(malop))
-    malop = "P4325M"
+    malop = "A0325H"
     console.log(checkMaLop(malop))
 </script>
 </body>
