@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Làm việc với các đối tượng thông dụng</title>
+</head>
+<body>
+<input type="button" value="bài 1" onclick="bai1()">Làm việc với Date
+<br><br><input type="button" value="bài 2" onclick="bai2()">Làm việc với Math
+<br><br><input type="button" value="bài 3" onclick="bai3()">Làm việc với String
+<script>
+
+    function bai1() {
+        let date = new Date()
+        let toDate = date.getDate()
+        let toMonth = date.getMonth()
+        let toYear = date.getFullYear()
+        console.log("Hôm này là " + date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear() + " thời gian " + date.getHours() + ":" + date.getMinutes())
+        let birdDay = date.setDate(15)
+        let birdMonth = date.setMonth(11)
+        let birdYear = date.setFullYear(2000)
+        console.log(date.getFullYear(toYear-birdYear))
+        console.log(date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear())
+
+    }
+
+    function bai2() {
+        document.write("Random từ 0 - 10: " + Math.round(Math.random() * 10) + "<br>")
+        document.write("Random từ 0 - 400: " + Math.round(Math.random() * 400) + "<br>")
+        document.write("Random từ 50 - 100: " + Math.round((Math.random() * 50) + 50) + "<br>")
+
+        let so = 53;
+        let gt = 1
+        for (let i = 1; i <= so; i++) {
+            gt *= i
+        }
+        document.write("Giai thừa của 53 = " + gt + "<br>")
+        document.write("(5, 7, 2, 9) Giá trị bé nhất là " + Math.min(5, 7, 2, 9) + "<br>")
+        document.write("Bán kinh hình tròn = 5 thì diện tích = " + Math.round(Math.PI*25) + "<br>")
+    }
+
+    function bai3() {
+        //phần 1
+        let chuoi = "Tôi yêu ngôn ngữ lập trình Javascript"
+        let tim = /a/g
+        document.write("Ký tự a có "+chuoi.match(tim).length+" lần xuất hiện<br>")
+        console.log(chuoi.match(tim).length)
+        //phần 2 cắt chuỗi
+        let mangchuoi = chuoi.split(" ")
+        document.write("mangchuoi = ["+mangchuoi + "]<br>")
+        console.log(mangchuoi)
+        //phần 3 đếm số lượng từ trong chuỗi
+        document.write("Có "+mangchuoi.length + " từ trong chuỗi<br>")
+        console.log(mangchuoi.length)
+        //phần 4
+        document.write(chuoi.replace("Javascript","Typescript"))
+        console.log(chuoi.replace("Javascript","Typescript"))
+    }
+</script>
+</body>
+</html>

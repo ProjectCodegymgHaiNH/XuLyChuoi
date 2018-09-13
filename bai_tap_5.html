@@ -29,20 +29,10 @@
     
     function bai2() {
         let chuoi = prompt("Nhập chuỗi")
-        let newchuoi = ""
-        let mangchuoi = []
-        let dem = chuoi.length
-        for (let i=0; i<chuoi.length; i++){
-            if (chuoi[i] != " ") {
-                newchuoi += chuoi[i]
-            }
-
-            if (chuoi[i] == " " || i+1 == dem ) {
-                mangchuoi.push(newchuoi)
-                newchuoi = ""
-            }
-        }
-        alert("Có tất cả "+mangchuoi.length+" ký tự")
+        document.write(chuoi+"<br>")
+        let mangchuoi = chuoi.split(" ")
+        document.write("có tất cả "+mangchuoi.length + " từ trong chuỗi<br>")
+        console.log(mangchuoi.length)
     }
     
     function bai3() {
@@ -102,7 +92,6 @@
         }else{
             alert("mã số sai")
         }
-
     }
 </script>
 </body>
