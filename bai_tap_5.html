@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập sử dụng biểu thức chính quy</title>
+</head>
+<body>
+<input type="button" value="bài 1" onclick="bai1()">Kiểm tra chuỗi đưa vào có đúng dạng dd/mm/yyyy
+<br><br><input type="button" value="bài 2" onclick="bai2()">Đếm số từ trong một chuỗi
+<br><br><input type="button" value="bài 3" onclick="bai3()">Đếm số nguyên âm/phụ âm trong một chuỗi
+<br><br><input type="button" value="bài 4" onclick="bai4()"> Kiểm tra mã số bảo mật hợp lệ
+
+<script>
+    function checkHam(check, regex){
+        regexp = regex
+        if (regexp.test(check)){
+            return true
+        }
+        return false
+    }
+
+    function bai1() {
+        let regex = /^[0-9]{2}\/[0-9]{2}\/[0-9]{4}$/
+        let check = "09/12/2412"
+        console.log(checkHam(check, regex))
+        check = "01/12/62412"
+        console.log(checkHam(check, regex))
+    }
+    
+    function bai2() {
+        let chuoi = prompt("Nhập chuỗi")
+        let newchuoi = ""
+        let mangchuoi = []
+        let dem = chuoi.length
+        for (let i=0; i<chuoi.length; i++){
+            if (chuoi[i] != " ") {
+                newchuoi += chuoi[i]
+            }
+
+            if (chuoi[i] == " " || i+1 == dem ) {
+                mangchuoi.push(newchuoi)
+                newchuoi = ""
+            }
+        }
+        alert("Có tất cả "+mangchuoi.length+" ký tự")
+    }
+    
+    function bai3() {
+        // * 5 nguyên âm: a , e , o , i , u .
+        //* 21 phụ âm: b , c , d , f , g , h , j , k , l , m ,  n , p , q , r , s , t , v , w , x , y , z .
+        let chuoi = prompt("Nhập chuỗi tiếng anh")
+        let regex1 = /^[aeuio]/
+        let chuoi1 = ""
+        let chuoi2 = ""
+        let count1 = 0
+        for (let i=0; i<chuoi.length; i++){
+            if(checkHam(chuoi[i],regex1)){
+                count1++
+                chuoi1+= "<u>"+chuoi[i]+"</u>"
+            }else{
+                chuoi1+= chuoi[i]
+            }
+        }
+        document.write("<h2>"+chuoi1+"</h2><br>")
+        document.write("có tổng cộng "+count1+" ký tự nguyên âm<br>")
+        let count2 =0
+        let regex2 = /^[b-df-hj-np-tv-z]/
+        for (let i=0; i<chuoi.length; i++){
+            if(checkHam(chuoi[i],regex2)){
+                count2++
+                chuoi2+= "<u>"+chuoi[i]+"</u>"
+            }else{
+                chuoi2+= chuoi[i]
+            }
+        }
+        document.write("<h2>"+chuoi2+"</h2><br>")
+        document.write("có tổng cộng "+count2+" ký tự nguyên âm<br>")
+    }
+    
+    
+    function bai4() {
+        //kiểm tra mã số bảo mật hợp lệ
+        let maso = prompt("Nhập mã số bảo mật \"a1b2\",\"a3b4\",\"a4b5\",\"a5b6\"")
+        let dulieu = ["a1b2","a3b4","a4b5","a5b6"]
+        let regex = /^[a-z0-9]{4}$/
+        let check = checkHam(maso,regex)
+        let checked = 0
+        if(check){
+            for (let i = 0; i<dulieu.length; i++){
+                if (maso!=dulieu[i]){
+                    checked++
+                } else{
+                    checked=0
+                    break
+                }
+            }
+            if (checked == 0){
+                alert("mã số đúng")
+            } else{
+                alert("mã số sai")
+            }
+        }else{
+            alert("mã số sai")
+        }
+
+    }
+</script>
+</body>
+</html>
