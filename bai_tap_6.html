@@ -11,17 +11,16 @@
 <script>
 
     function bai1() {
-        let date = new Date()
-        let toDate = date.getDate()
-        let toMonth = date.getMonth()
-        let toYear = date.getFullYear()
-        console.log("Hôm này là " + date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear() + " thời gian " + date.getHours() + ":" + date.getMinutes())
-        let birdDay = date.setDate(15)
-        let birdMonth = date.setMonth(11)
-        let birdYear = date.setFullYear(2000)
-        console.log(date.getFullYear(toYear-birdYear))
-        console.log(date.getDate() + "/" + date.getMonth() + "/" + date.getFullYear())
-
+        let today = Date.now()
+        console.log(today)
+        let bird = new Date(1992,11,5)
+        let time = today - bird
+        document.write("Đã sống "+Math.round(time/1000/60/60/24/365)+" năm<br>")
+        document.write("Đã sống "+Math.round(time/1000/60/60/24/30)+" tháng<br>")
+        document.write("Đã sống "+Math.round(time/1000/60/60/24)+" ngày<br>")
+        document.write("Đã sống "+Math.round(time/1000/60/60)+" giờ<br>")
+        document.write("Đã sống "+Math.round(time/1000/60)+" phút<br>")
+        document.write("Đã sống "+Math.round(time/1000)+" giây<br>")
     }
 
     function bai2() {
